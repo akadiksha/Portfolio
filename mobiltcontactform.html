@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primary information</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+AU+SA:wght@100..400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styleContactForm">
+</head>
+<body>
+    <img class="myphoto" src="./img/cropped-photo-Diksha.jpg" alt="">
+            <h3 id="name">Ms. Diksha Patil</h3>
+            <p>Manager - Digital Implementation<br> Zoho Creator Developer </p><br>
+                <p class="description">ITIL V4 | ITGC | CRM | | BI & Analytics | ERP Implementation (Agile-Scrum & Waterfall ) .</p>
+            <p class="informal"><i>Lets Co-create!</i></p>
+    <form class="contact-form" id="contactForm" action="https://formspree.io/f/mldgdrpj"
+            method="POST">
+                
+                <input type="text" id="name" placeholder="Your Name" required title="Mininum 5 maximum 30 characters allowed. No special symbol or numbers allowed"
+                maxlength="30"
+                minlength="5"
+                ><br><br>
+                
+                <input type="email" id="email" placeholder="Your Email" required><br><br>
+                <input type="tel" id="phone" placeholder="Phone Number" required title="Mention your email-ID fr Contacting You.">
+                <label for="requirement">Requirement Type</label>
+                
+  <div id="requirementOptions">
+    <label>
+      <input type="radio" name="requirement" value="hiring" required>
+      Full-Time Employment
+    </label>
+    <label>
+      <input type="radio" name="requirement" value="zohocreator">
+      Zoho Creator Implementation Project
+    </label>
+    <label>
+      <input type="radio" name="requirement" value="web">
+      Web Development
+    </label>
+    <label>
+      <input type="radio" name="requirement" value="other">
+      Other
+    </label>
+  </div>
+  <label for="brief">RequirementDecription</label>
+  <textarea id="brief" name="brief" placeholder="Please elaborate on your requirement." style="height:100px"></textarea>
+    <label for="website"></label>
+    <input type="url" id="website" name="website" placeholder="Please mention website / linked in page if any.">
+    <p id="error" class="error"></p>
+    <button type="submit" value="Submit">Submit</button>
+    </form>
+<a href="./index.html">
+<button class="contact-button" id="contactButton">Contact</button> </a>
+    </section>
+    <!-- Closing Entire Content -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+  const radios = document.querySelectorAll('input[name="requirement"]');
+  const briefTextarea = document.getElementById("#brief");
+
+  radios.forEach((radio) => {
+    radio.addEventListener("change", () => {
+      if (radio.value === "other") {
+        briefTextarea.style.display = "block";
+        briefTextarea.required = true;
+      } else {
+        briefTextarea.style.display = "none";
+        briefTextarea.required = false;
+      }
+    });
+  });
+  document.getElementById("requirementForm").addEventListener("submit", (event) => {
+    if (!document.querySelector('input[name="requirement"]:checked')) {
+      alert("Please select a requirement type.");
+      event.preventDefault();
+    }
+  });
+});
+    </script> 
+    
+</body>
+</html>

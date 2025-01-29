@@ -1,0 +1,375 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, 'Times New Roman', Helvetica, sans-serif;
+}
+body{
+    font-family: 'Times New Roman', Georgia, serif;
+    font-size: 16px;
+    color: black;
+    /* Using SVG background */
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%230099ff" fill-opacity="0.1" d="M0,192L48,186.7C96,181,192,171,288,181.3C384,192,480,224,576,224C672,224,768,192,864,181.3C960,171,1056,181,1152,160C1248,139,1344,85,1392,58.7L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+    box-shadow: 0px 0px 10px 0px powderblue;
+}
+/* Header and Navigation */
+.website-header {
+    width: 100vw;
+    min-height: 4rem;
+    max-height: 5vh;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    position: fixed;
+    position: fixed;
+    top: 0px;
+    z-index: 1000;
+    box-shadow: rgb(175, 238, 238) 0px 0px 10px 0px;
+    
+}
+.informal-invite {
+    color: darkolivegreen;
+    font-size: 2rem;
+    font-family: 'Times New Roman', Georgia, Cambria;
+    font-style: italic;
+    
+    /* font-family:"Playwrite VN", "Playwrite AU SA"; */
+
+}
+@media (max-width: 768px) {
+    .website-header{
+        height: 8vh;
+    }
+    .informal-invite {
+        display: none;
+    }
+    #linkedinlogo{
+        position: fixed;
+        top: 0;
+        left:0;
+    }
+}
+
+.navlinks {
+    width: 40vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+.navlinks a {
+    color: darkslateblue;
+    /* color: darkgreen; 
+    color: darkslategray;*/
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .navlinks {
+        display: none;
+        position: fixed;
+        right: 0;
+        top: 5rem;
+        height: 50%;
+        width: 50%;
+        opacity: 0.8;
+        text-align: center;
+        background-color: darkslategray;
+        flex-direction: column;
+        padding: 50px 20px;
+        box-shadow: -5px 0 10px rgba(0,0,0,0.5);
+        color: powderblue;
+    }
+    /* show navlinks */
+    .navlinks.show {
+        display: flex;
+        gap: 1rem;
+    }
+    .navlinks a {
+        text-decoration: none;
+        color: powderblue;
+
+    }
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        color: powderblue;
+    }
+}
+.icon{
+    /* position: fixed; */
+    height:3vmax;
+    width: auto;
+    margin: 1rem;
+}
+/* styling headersection */
+/* Opening style entirecontent */
+#entire-content{
+    padding-top: 3rem;
+    /* background-color: #33ff3d; */    
+    height: 100vh;
+    overflow: hidden; 
+    /* Prevent scrolling of the entire layout */
+}
+/* Closing style entirecontent */
+
+/* Opening Styling left-flex */
+.left-flex{
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgb(175, 238, 238) 0px 0px 10px 0px;
+    position: fixed;
+    align-items: center;
+    padding: 1rem;
+    top: 10vh;
+    height: 90vh; 
+    /* vh-footer height*/
+    width: 25vw; 
+    /* Fixed width */
+    overflow-y: auto;    
+}
+@media (max-width: 768px)  {
+    .left-flex{
+        display: none;
+    } 
+}
+/* CLosing Styling left-flex */
+.myphoto{
+    border-radius: 10%;
+    padding: 1rem 0 0 0;
+    height: 15vh;
+    image-rendering: crisp-edges;  
+}
+.left-flex p{
+    text-indent: center;   
+}
+.description{
+    font-size: 0.8rem;
+    text-indent: center;
+}
+.informal {
+    font-family: "Georgia" serif;
+     font-optical-sizing: auto;
+     font-weight: 150;
+     font-style: italic;
+     font-size: 1.5rem;
+     padding: 1rem;
+    }
+/*Starting Contact Form */
+.contact-form {
+    left: 0;
+    display: flex;
+    border-radius: 2rem;
+    flex-direction: column;
+    justify-content: flex-start;
+   }
+#requirementOptions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+.contact-button {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 45vw;
+    width: 20vw;
+    text-align: center;
+    background-color: cadetblue;
+    color: white;
+    transform: translateY(-50%);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .contact-form {
+        display: none;
+        width: 100vw;
+        height: 100vh;
+        box-shadow: 2px 0 10px powderblue;
+        z-index: 1000;
+        background-color: rgb(112, 128, 144)
+    }
+    .contact-form.show {
+        display: block;
+    }
+    .contact-button {
+        display: block;
+        z-index: 10001;
+    }
+}
+@media (min-width: 769px) {
+    .contact-button {
+        display: none;}
+    }
+input::placeholder, textarea::placeholder {
+    font-size: 1rem;
+}
+/* Style inputs with type="text", select elements and textareas */
+#ContactForm input, 
+#ContactForm select, 
+#ContactForm textarea {
+ 
+ width: 100%; 
+ /* Full width */
+ height: 1.5rem;
+ border: 1px solid #ccc; 
+ /* Gray border */
+ border-radius: 4px; 
+ /* Rounded borders */
+ box-sizing: border-box; 
+ /* Make sure that padding and width stays in place */
+ /* margin-top: 5px; */
+ border-bottom: 2px solid #AFEEEE;
+ box-shadow: 0 2px 5px #AFEEEE(0,0,0,0.2);
+}
+
+/* Style the submit button with a specific background color etc */
+button[type=submit] {
+ background-color: #ffb6c1;
+ color: darkslategrey;
+ padding: 12px 20px;
+ border: none;
+ border-radius: 4px;
+ cursor: pointer;
+ min-height: 2rem;
+ transition: background-color 0.3s ease;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+button[type=submit]:hover {
+ background-color: powderblue;
+}
+#ContactForm p.error {
+ color: red;
+ font-size: 14px;
+ margin-top: -10px;
+}
+/* Opening Styling main */
+main{
+    margin-left: 25vw; 
+    /* Offset by the width of left flex */
+    flex: 1;
+    height: 100vh;
+    overflow-y: auto; /* Allow scrolling inside */
+    padding: 2rem;
+}
+@media (max-width: 768px) {
+    main {
+        margin-left: 0;
+    }
+}
+/* Closing Styling main */
+/* Opening introduction style */
+.introduction{
+    padding: 2rem 1rem;
+    display: flex;
+    gap: 10px;
+    justify-content: space-around;
+}
+@media (max-width: 768px) {
+    .introduction{
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: space-around;
+    }
+}
+#linkedinzoho{
+    max-width: 100%;
+    height: auto;
+    position: relative;    
+/* below not working as it affects main content display */
+    left:0;
+    top: 0;
+    
+}
+.playwrite-vn-introduction {
+    vertical-align: bottom;
+    /* above not working */
+
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: bold;
+    font-size: 1rem;
+    font-family: "Playwrite VN", "Playwrite AU SA";
+    text-indent: center;
+     /* above not working */
+  }
+/* Closing introduction style */
+/* Opening skillsrow */
+#skillsrow{
+    padding: 1rem;
+    width: 80vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: column;
+    box-shadow: 0px 0px 10px 0px powderblue;
+    
+    border-radius: 20px;
+    /* border radius not working */
+    opacity: 0.8;
+}
+@media (max-width: 768px){
+    #skillsrow{
+        padding: 1rem;
+        margin-left: 0;
+        width: 90vw;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        flex-direction: column;
+        box-shadow: 0px 0px 10px 0px powderblue;
+        border-radius: 20px;
+        /* border radius not working */
+        opacity: 0.8;
+    }
+}
+
+.carousel-container {
+    padding: 2rem ;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: slide 20s linear infinite;
+    max-width: 70vw;
+    display: flex;
+    position:relative;
+}
+.carousel-track{
+    display: flex;
+    /* position: absolute; */
+}
+.carousel-track img {
+    max-height: 2rem;
+    margin: 0 30px;
+}
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+.carousel-track:hover {
+    animation-play-state: paused;
+}
+/* Closing skillsrow */

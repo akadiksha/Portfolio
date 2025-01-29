@@ -1,0 +1,124 @@
+      * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, 'Times New Roman', Helvetica, sans-serif;
+}
+body{
+    font-family: 'Times New Roman', Georgia, serif;
+    font-size: 16px;
+    color: powderblue(177, 54, 54);  
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgb(175, 238, 238) 0px 0px 10px 0px;
+    position: fixed;
+    align-items: center;
+    padding: 0rem 1rem;
+    height: 100vh;
+    /* vh-footer height*/
+    width: 100vw; 
+    /* Fixed width */
+    overflow-y: auto;
+    background-color: darkslategrey;
+}
+
+.myphoto{
+    border-radius: 10%;
+    padding: 1rem 0 0 0;
+    height: 15vh;
+    image-rendering: crisp-edges;  
+}
+
+.description{
+    font-size: 0.8rem;
+    text-indent: center;
+}
+.informal {
+    font-family: "Georgia" serif;
+     font-optical-sizing: auto;
+     font-weight: 150;
+     font-style: italic;
+     font-size: 1.5rem;
+     padding: 1rem;
+    }
+/*Starting Contact Form */
+.contact-form {
+    
+    display: flex;
+    border-radius: 8px;
+    flex-direction: column;
+    
+    width: 100vw;
+    height: 100vh;
+    box-shadow: 2px 0 10px powderblue;
+}
+#requirementOptions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+
+    
+    
+input::placeholder, textarea::placeholder {
+    font-size: 1rem;
+}
+/* Style inputs with type="text", select elements and textareas */
+#ContactForm input, 
+#ContactForm select, 
+#ContactForm textarea {
+
+ width: 100%; 
+ /* Full width */
+ height: 1.5rem;
+
+ border: 1px solid #ccc; 
+ /* Gray border */
+ border-radius: 4px; 
+ /* Rounded borders */
+ box-sizing: border-box; 
+ /* Make sure that padding and width stays in place */
+ margin-top: 5px;
+ border-bottom: 2px solid #AFEEEE;
+ box-shadow: 0 2px 5px #AFEEEE(0,0,0,0.2);
+}
+
+/* Style the submit button with a specific background color etc */
+button[type=submit] {
+ background-color: #ffb6c1;
+ color: darkslategrey;
+ padding: 12px 20px;
+ border: none;
+ border-radius: 4px;
+ cursor: pointer;
+ min-height: 2rem;
+ transition: background-color 0.3s ease;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+button[type=submit]:hover {
+ background-color: powderblue;
+}
+#ContactForm p.error {
+ color: red;
+ font-size: 14px;
+ margin-top: -10px;
+}
+.contact-button {
+    display: block;
+    z-index: 10001;
+    position: fixed;
+    bottom: 0;
+    left: 45vw;
+    width: 20vw;
+    text-align: center;
+    background-color: cadetblue;
+    color: white;
+    transform: translateY(-50%);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
